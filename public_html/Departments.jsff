@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:facelets="http://xmlns.oracle.com/jdev/webapp/facelets"
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:messages id="m1"/>
+    <af:table value="#{bindings.DepartmentsView1.collectionModel}" var="row"
+              rows="#{bindings.DepartmentsView1.rangeSize}"
+              emptyText="#{bindings.DepartmentsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" fetchSize="#{bindings.DepartmentsView1.rangeSize}" id="t1">
+        <af:column headerText="#{bindings.DepartmentsView1.hints.DepartmentId.label}" id="c1">
+            <af:inputText value="#{row.bindings.DepartmentId.inputValue}"
+                          label="#{bindings.DepartmentsView1.hints.DepartmentId.label}"
+                          required="#{bindings.DepartmentsView1.hints.DepartmentId.mandatory}"
+                          columns="#{bindings.DepartmentsView1.hints.DepartmentId.displayWidth}"
+                          maximumLength="#{bindings.DepartmentsView1.hints.DepartmentId.precision}"
+                          shortDesc="#{bindings.DepartmentsView1.hints.DepartmentId.tooltip}" id="it1">
+                <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.DepartmentsView1.hints.DepartmentId.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.DepartmentsView1.hints.DepartmentName.label}" id="c2">
+            <af:inputText value="#{row.bindings.DepartmentName.inputValue}"
+                          label="#{bindings.DepartmentsView1.hints.DepartmentName.label}"
+                          required="#{bindings.DepartmentsView1.hints.DepartmentName.mandatory}"
+                          columns="#{bindings.DepartmentsView1.hints.DepartmentName.displayWidth}"
+                          maximumLength="#{bindings.DepartmentsView1.hints.DepartmentName.precision}"
+                          shortDesc="#{bindings.DepartmentsView1.hints.DepartmentName.tooltip}" id="it2">
+                <f:validator binding="#{row.bindings.DepartmentName.validator}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.DepartmentsView1.hints.ManagerId.label}" id="c3">
+            <af:inputText value="#{row.bindings.ManagerId.inputValue}"
+                          label="#{bindings.DepartmentsView1.hints.ManagerId.label}"
+                          required="#{bindings.DepartmentsView1.hints.ManagerId.mandatory}"
+                          columns="#{bindings.DepartmentsView1.hints.ManagerId.displayWidth}"
+                          maximumLength="#{bindings.DepartmentsView1.hints.ManagerId.precision}"
+                          shortDesc="#{bindings.DepartmentsView1.hints.ManagerId.tooltip}" id="it3">
+                <f:validator binding="#{row.bindings.ManagerId.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView1.hints.ManagerId.format}"/>
+            </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.DepartmentsView1.hints.LocationId.label}" id="c4">
+            <af:inputText value="#{row.bindings.LocationId.inputValue}"
+                          label="#{bindings.DepartmentsView1.hints.LocationId.label}"
+                          required="#{bindings.DepartmentsView1.hints.LocationId.mandatory}"
+                          columns="#{bindings.DepartmentsView1.hints.LocationId.displayWidth}"
+                          maximumLength="#{bindings.DepartmentsView1.hints.LocationId.precision}"
+                          shortDesc="#{bindings.DepartmentsView1.hints.LocationId.tooltip}" id="it4">
+                <f:validator binding="#{row.bindings.LocationId.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView1.hints.LocationId.format}"/>
+            </af:inputText>
+        </af:column>
+    </af:table>
+</ui:composition>
