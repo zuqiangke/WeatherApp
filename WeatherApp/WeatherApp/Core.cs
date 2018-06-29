@@ -8,8 +8,8 @@ namespace WeatherApp
         public static async Task<Weather> GetWeather (string zipCode)
         {
             //Sign up for a free API key at http://openweathermap.org/appid
-            string key = "&APPID=7c66ccb0aabab45eae6d5c41003a3a75";
-            string queryString = "http://api.openweathermap.org/data/2.5/weather?zip=" + zipCode + "us&appid=" + key + "&units=imperial";
+            string key = "7c66ccb0aabab45eae6d5c41003a3a75";
+            string queryString = "http://api.openweathermap.org/data/2.5/weather?zip=" + zipCode + ",us&appid=" + key + "&units=imperial";
             dynamic resoluts = await DataService.getDataFromService(queryString).ConfigureAwait(false);
             if (resoluts["weather"] != null)
             {
