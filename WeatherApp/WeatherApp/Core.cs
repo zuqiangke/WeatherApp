@@ -15,10 +15,10 @@ namespace WeatherApp
             {
                 Weather weather = new Weather();
                 weather.Title = (string)resoluts["name"];
-                weather.Temprarture = (string)resoluts["main"]["temp"] + " F";
+                weather.Temperature = (string)resoluts["main"]["temp"] + " F";
                 weather.Wind = (string)resoluts["wind"]["speed"] + " mph";
                 weather.Humidity = (string)resoluts["main"]["humidity"] + " %";
-                weather.Visiability = (string)resoluts["weather"][0]["main"];
+                weather.Visibility = (string)resoluts["weather"][0]["main"];
                 DateTime time = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
                 DateTime sunrise = time.AddSeconds((double)resoluts["sys"]["sunrise"]);
                 DateTime sunset = time.AddSeconds((double)resoluts["sys"]["sunset"]);
